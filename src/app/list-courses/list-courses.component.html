@@ -1,7 +1,10 @@
-<h1 class="mb-1">Cursos disponíveis</h1>
+<app-create-course (newCourse)="addCourse($event)"></app-create-course>
+
+<h1 class="mt-5 mb-1">Cursos disponíveis</h1>
 <hr class="mb-4" />
-<app-course
-  *ngFor="let course of course"
-  [title]="course.title"
-  [workload]="course.workload">
-</app-course>
+<div class="row">
+  <div class="col-6" *ngFor="let course of courses">
+    <app-course [course]="course"></app-course>
+  </div>
+</div>
+
